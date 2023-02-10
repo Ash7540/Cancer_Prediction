@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+{% block title %}Individual-Test{% endblock title %}
+{% block body %}
+
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/individual.css')}}">s -->
+</head>
+<header class="masthead" style="background-image: url('{{ url_for('static',filename='assets/img/c3.jpeg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading">
+                    <h1>Predict Your Cancer Level Here</h1>
+                    <h2 class="subheading">by giving input of 24 features....</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <p>Fill out the below details to check the cancer level.</p>
+                <div class="my-5">
+                    <form action="{{url_for('predict')}}" method="post" , class="indi">
+                        <div class="form-floating">
+                            <!-- <div class="mb-3 row">
+                                <label for="id" class="form-label">Patient Id:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="id" name="id" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div> -->
+                            <div class="mb-3 row">
+                                <label for="age" class="form-label">Age:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="age" name="age" placeholder="Enter the Value Here " required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="gender" class="form-label">Gender:-</label>
+                                <div class="col-sm-7">
+                                    <select name="gender" id="gender" class="input" required="required">
+                                        <option value="">Not Selected</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="pollution" class="form-label">Pollution Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="pollution" name="pollution" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="alcohol" class="form-label">Alcohol Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="alcohol" name="alcohol" placeholder="Enter the Value Here" required="required"
+                                        class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="dust" class="form-label">Dust Allergy Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="dust" name="dust" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="occu" class="form-label">OccuPational Hazards Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="occu" name="occu" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="genetic" class="form-label">Genetic Risk Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="genetic" name="genetic" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="chronic" class="form-label">Chronic Lung Disease Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="chronic" name="chronic" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="balance" class="form-label">Balanced Diet Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="balance" name="balance" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="obesity" class="form-label">Obesity Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="obesity" name="obesity" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="smoking" class="form-label">Smoking Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="smoking" name="smoking" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="passive_smoker" class="form-label">Passive Smoker Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="passive_smoker" name="passive_smoker" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="chest"cough class="form-label">Chest Pain Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="chest" name="chest" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="cough" class="form-label">Coughing of Blood Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="cough" name="cough" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="fatigue" class="form-label">Fatigue Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="fatigue" name="fatigue" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="weight_loss" class="form-label">Weight Loss Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="weight_loss" name="weight_loss" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="shortness" class="form-label">Shortness of Breath Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="shortness" name="shortness" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="wheezing" class="form-label">Wheezing Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="wheezing" name="wheezing" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="swallowing" class="form-label">Swallowing Difficulty Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="swallowing" name="swallowing" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="clubbing" class="form-label">Clubbing of Finger Nails Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="clubbing" name="clubbing" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="cold" class="form-label">Frequent Cold Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="cold" name="cold" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="dry_cough" class="form-label">Dry Cough Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="dry_cough" name="dry_cough" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="snoring" class="form-label">Snoring Level:- </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="snoring" name="snoring" placeholder="Enter the Value Here" required="required" class="input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Predict</button>
+                    </form>
+                </div>
+
+                <br>
+                <br>
+                <h2 style="color: blue; font-style:oblique ;">{{ prediction_text }}</h2>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

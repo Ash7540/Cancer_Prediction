@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{ url_for('static',filename='assets/img/c5.jpg') }}">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-155 col-lg-80 col-xl-70">
+                <div class="site-heading">
+                    <h1>VinciTech <br> Softwares & Analytics</h1>
+                    <span class="subheading">Cancer Disease Level Prediction System</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-100 col-lg-118 col-xl-117">
+
+
+            <!--todo:- fetch it using for loop from the database-->
+            <!-- Content section 1-->
+            <section id="scroll">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6 order-lg-2">
+                            <div class="p-10"><img class="img-fluid rounded-circle"
+                                    src="{{ url_for('static',filename='assets/img/c6.jpg')}}" alt="..." />
+                            </div>
+                        </div>
+                        <div class="col-lg-6 order-lg-1">
+                            <div class="p-10">
+                                <h2 class="display-4">What is this Project?</h2>
+                                <p>In the current era there are many types of cancer disease such as blood, lungs brain and so on.
+                                    This project is based on Lungs Cancer. It helps in Predicting the level of the cancer in terms of low, medium and high.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+{% endblock %}

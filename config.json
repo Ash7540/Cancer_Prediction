@@ -1,0 +1,14 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/cancer",
+    "prod_uri": "mysql://root:@localhost/cancer",
+    "fb_url": "#",
+    "ig_url": "#",
+    "gh_url": "#",
+    "upload_location": "E:\\my_projects\\Cancer_Prediction\\cancer_prediction_website\\static"
+
+  }
+
+}

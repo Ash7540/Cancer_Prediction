@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block title %}About Us{% endblock title %}
+{% block body %}
+
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('{{ url_for('static',filename='assets/img/c5.jpg') }}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="page-heading">
+                    <h1>About Us</h1>
+                    <span class="subheading">This Is what We do.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+</header>
+<!-- About section one-->
+<section class="py-5 bg-light" id="scroll-target">
+    <div class="container px-5 my-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6"><img class="img-fluid rounded  mb-5 mb-lg-0"
+                    src="{{ url_for('static',filename='assets/img/c7.png')}}" alt="..." /></div>
+            <div class="col-lg-6">
+                <h2 class="fw-bolder">APPROACH AND METHODOLOGY</h2>
+                <p class="lead fw-normal text-muted mb-0"> This work aims to predict the level and risk factor
+                    of lungs cancer disease as well as predict the overall risk using Data Preparation Random Forest Algorithm.
+                    Random Forest is a form of regression analysis used in Decision Algorithm to predict the outcome of
+                    a categorical dependent variable from a collection of predictors or independent variables. In Random
+                    Forest the dependent variable is always binary.Random Forest is mainly used to for prediction and
+                    also calculating the probability of success.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team members section-->
+<section class="py-5 bg-light">
+    <div class="container px-5 my-5">
+        <div class="text-center">
+            <h2 class="fw-bolder">Our team</h2>
+            <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
+        </div>
+        <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+            <div class="col mb-5">
+                <div class="text-center">
+                    <img class="img-fluid rounded-circle mb-4 px-4"
+                        src="{{ url_for('static',filename='assets/img/heart19.jpg')}}" alt="..." />
+                    <h5 class="fw-bolder">Ashwin Chavan </h5>
+                    <div class="fst-italic text-muted">Machine Learning &amp; <br>Full Stack Developer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+<!-- Footer-->
+<footer class="bg-dark py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto">
+                <div class="small m-0 text-white">Copyright &copy; VinciTech 2023</div>
+            </div>
+            <div class="col-auto">
+                <a class="link-light small" href="#!">Privacy</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="link-light small" href="#!">Terms</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="link-light small" href="#!">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
+{% endblock %}

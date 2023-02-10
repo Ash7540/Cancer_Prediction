@@ -1,0 +1,31 @@
+    .form-floating{
+        margin: auto;
+        width: 80vw;
+        /* padding-top: 2rem; */
+        text-align: auto;
+
+    }
+    .input{
+        justify-content: space-between;
+        margin: auto;
+        width: 50vh;
+    }
+        
+    input[type=text]:focus {
+        background-color: rgb(221, 221, 221);
+    }
+    select:focus {
+        background-color: rgb(221, 221, 221);;
+    }
+    span{
+        text-align: center;
+        font-size: 18px;
+    }
+
+        /* select {
+            width: 45vw;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+        } */
